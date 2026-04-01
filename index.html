@@ -563,6 +563,11 @@ nav{
   background:var(--card);border:1px solid var(--border);
   padding:0;position:relative;overflow:hidden;
   transition:all 0.3s;cursor:none;
+
+ /*   display: flex;
+  flex-direction: column;
+  height: 100%; */
+
 }
 .proj-card::after{
   content:'';position:absolute;inset:0;
@@ -938,39 +943,39 @@ footer{
 <div id="app"></div>
 
 <!-- FOOTER -->
-<footer id="footer" style="display:none">
-  <div class="footer-inner">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="fb-logo">@Abhii_prajapati/div>
-        <p>Cybersecurity analyst, ethical hacker and SOC professional building a safer digital world — one vulnerability at a time.</p>
-      </div>
-      <div>
-        <div class="footer-col-title">// NAVIGATION</div>
-        <div class="footer-links" id="footer-nav"></div>
-      </div>
-      <div>
-        <div class="footer-col-title">// CONNECT</div>
-        <div class="footer-links">
-          <button class="footer-link">GitHub / @0xalex-sec</button>
-          <button class="footer-link">LinkedIn / Alex Chen</button>
-          <button class="footer-link">HackTheBox / 0xAlex</button>
-          <button class="footer-link">TryHackMe / 0xAlex</button>
-          <button class="footer-link">Email / alex@0xalex.io</button>
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="fb-logo">@Abhii_prajapati</div>
+          <p>Cybersecurity Analyst, Network Security and SOC professional building a safer digital world — one vulnerability at a time.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">// NAVIGATION</div>
+          <div class="footer-links" id="footer-nav"></div>
+        </div>
+        <div>
+          <div class="footer-col-title">// CONNECT</div>
+          <div class="footer-links">
+            <button class="footer-link">LinkedIn / linkedin.com/in/abhii-prajapati6350</button>
+            <button class="footer-link">GitHub / github.com/Abhii-prajapat</button>
+            <button class="footer-link">HackTheBox / profile.hackthebox.com/</button>
+            <button class="footer-link">TryHackMe / tryhackme.com/p/Abhiiprajapat</button>
+            <button class="footer-link">Email / abhishekprajapati6350@gmail.com</button>
+          </div>
         </div>
       </div>
+      <div class="footer-bottom">
+        <div class="footer-bottom-left">© 2026 Abhishek Prajapat · ALL RIGHTS RESERVED · BUILT WITH TAILWIND</div>
+        <div class="footer-bottom-right">"Trust no system. Verify everything."</div>
+      </div>
     </div>
-    <div class="footer-bottom">
-      <div class="footer-bottom-left">© 2026 Abhishek Prajapat · ALL RIGHTS RESERVED · BUILT WITH REACT + TAILWIND</div>
-      <div class="footer-bottom-right">"Trust no system. Verify everything."</div>
-    </div>
-  </div>
-</footer>
+  </footer>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
-<script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.5/babel.min.js"></script>
+  <script>
 /* ════════════════════════════════════
    CURSOR
 ════════════════════════════════════ */
@@ -1018,22 +1023,22 @@ const {useState,useEffect,useRef,useCallback}=React;
 const PAGES=['home','profile','projects','blog','resume','contact'];
 
 const PROJECTS=[
-  {id:1,num:'01',icon:'🔍',title:'Network Recon Automation Suite',
-   desc:'Automated network discovery and vulnerability assessment tool combining Nmap, Masscan, and custom Python scripts. Generates prioritized risk reports with executive summaries.',
-   tools:['Python','Nmap','Masscan','SQLite','FastAPI'],
-   tags:['Recon','Automation','Network'],cat:'Network',
+  {id:1,num:'01',icon:'🔍',title:'Mini SOC Lab with Wazuh SIEM',
+   desc:'Built a mini SOC lab using Wazuh SIEM in a multi-VM environment to simulate real-world attacks such as RDP brute-force using Hydra and network scanning using Nmap. Configured centralized log monitoring, created custom detection rules, performed threat hunting, and mapped activities to MITRE ATT&CK framework for structured analysis.',
+   tools:['Wazuh', 'VirtualBox', 'Kali Linux', 'Windows 10', 'Hydra', 'Nmap','MITRE ATT&CK'],
+   tags:[ 'SOC', 'SIEM', 'Threat Detection', 'MITRE ATT&CK' ],cat:'Network',
    status:'COMPLETE',github:'#'},
-  {id:2,num:'02',icon:'🛡️',title:'Custom SIEM Dashboard',
-   desc:'Built a full SIEM dashboard on top of ELK Stack. Includes custom Kibana dashboards for brute-force, lateral movement, and C2 beacon detection with Slack alerting.',
-   tools:['Elasticsearch','Kibana','Python','Logstash','Sigma'],
-   tags:['SOC','Detection','SIEM'],cat:'SOC',
+  {id:2,num:'02',icon:'🛡️',title:'Incident Response Report – SOC Lab',
+   desc:'Created a structured incident response report based on simulated brute-force and network scanning attacks in a Wazuh SIEM lab environment. Performed log analysis, validated threats, mapped activities to MITRE ATT&CK, and documented detection, investigation, and response workflows with clear mitigation strategies for security operations.',
+   tools:['Wazuh', 'Windows Event Logs', 'MITRE ATT&CK', 'Hydra', 'Nmap'],
+   tags:[ 'Incident Response', 'SOC', 'Threat Analysis', 'MITRE ATT&CK' ],cat:'SOC',
    status:'COMPLETE',github:'#'},
   {id:3,num:'03',icon:'🧅',title:'Phishing Kit Analyzer',
    desc:'Static + dynamic analysis tool for phishing kits. Extracts IOCs, identifies exfiltration methods, generates MITRE ATT&CK mapping, and creates structured threat reports.',
    tools:['Python','YARA','NLTK','Docker','Flask'],
    tags:['Threat Intel','Phishing','OSINT'],cat:'Threat Intel',
    status:'COMPLETE',github:'#'},
-  {id:4,num:'04',icon:'💉',title:'Web App Pentest Toolkit',
+  /*{id:4,num:'04',icon:'💉',title:'Web App Pentest Toolkit',
    desc:'Modular web application penetration testing framework. Includes custom fuzzer for SQLi/XSS/SSTI, JWT attack module, and subdomain takeover checker.',
    tools:['Python','Burp Suite','SQLMap','Go','Requests'],
    tags:['Web Exploitation','Pentest','OWASP'],cat:'Web',
@@ -1047,7 +1052,7 @@ const PROJECTS=[
    desc:'Automated threat intel aggregation from VirusTotal, Shodan, AbuseIPDB, and MISP. Enriches alerts with context and generates IOC blocklists for firewall deployment.',
    tools:['Python','Shodan API','MISP','VirusTotal','Redis'],
    tags:['Threat Intel','API','Automation'],cat:'Threat Intel',
-   status:'IN PROGRESS',github:'#'},
+   status:'IN PROGRESS',github:'#'},*/
 ];
 
 const BLOGS=[
@@ -1523,7 +1528,7 @@ function Projects(){
               </div>
               <div class="pc-footer">
                 <button class="pc-link">VIEW DETAILS →</button>
-                <button class="pc-link" style={{color:'var(--text2)'}}>GITHUB →</button>
+                <a class="pc-link" href={p.github && p.github !== '#' ? p.github : 'https://github.com/Abhii-prajapat/Mini-SOC-Lab'} target="_blank" rel="noreferrer" style={{color:'var(--text2)'}}>GITHUB →</a>
               </div>
             </div>
           ))}
